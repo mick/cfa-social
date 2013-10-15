@@ -1,0 +1,90 @@
+body {
+  font: 10px sans-serif;
+  color:#fff;
+  padding:20px;
+  background:#0074c8;
+  
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.area {
+fill: steelblue;
+fill-opacity:0.1;
+stroke:#3f87ff;
+stroke-width:2px;
+stroke-opacity:0.5;
+}
+.chart{
+float:left;
+}
+.totals{
+float:left;
+font-size:40px;
+color:#3f87ff;
+
+}
+.clear{
+clear:both;
+}
+.title{
+font-size:24px;
+}
+
+div.post-container{ 
+  position:absolute;
+  top:100px;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  z-index:-5;
+}
+div.post{ 
+  margin:50px auto;
+  width:20px;
+  background:#aaa;
+  height:100%;
+
+}
+
+div.tweeters{ 
+  position:fixed;
+  bottom:0px;
+  left:0px
+  right:0px;
+  background:#0074c8; 
+}
+img.tweeter{ 
+  height:40px;
+  width:40px;
+  border-radius:5px;
+  padding:2px;
+}
+div.tweet{ 
+  background:#fff;
+  color:#0074c8; 
+  width:900px;
+  margin:50px auto;
+  padding:40px;
+  border:solid 1px #aaa;
+  border-radius:10px;
+}
+div.tweet div.name{ 
+  font-size:34px;
+  font-weight:bold;
+  text-align:right;
+}
+div.tweet div.name img{
+  height:28px;
+  width:28px;
+  border-radius:5px;
+} 
+
+div.tweet div.content{ 
+  font-size:50px
+}
