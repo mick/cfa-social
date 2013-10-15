@@ -7,10 +7,12 @@ var fetchTweets = function(){
     var data = JSON.parse(resp.responseText);
     for(s in data.statuses){
       tweets.push(data.statuses[s])
+
+      if(tweets.length > 100){
+        tweets.splice(0,1);
+      }
+
     }
-
-    tweets = tweets.splice(0, tweets.length-100);
-
     showTweets(tweets)
 
     highlightTweet(tweets[0])
