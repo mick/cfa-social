@@ -8,9 +8,9 @@ var fetchTweets = function(){
     for(s in data.statuses){
       tweets.push(data.statuses[s])
     }
-    for(s in data.statuses){
-      tweets = tweets.splice(tweets.length-100, 100);
-    }
+
+    tweets = tweets.splice(tweets.length-100, 100);
+
 
     showTweets(tweets)
 
