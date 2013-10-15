@@ -5,14 +5,11 @@ var tweets= [];
 var fetchTweets = function(){
   d3.xhr("http://mickproxy.herokuapp.com/?url="+encodeURIComponent("https://api.twitter.com/1.1/search/tweets.json?q=@codeforamerica+OR+%23cfasummit&count=100&result_type=recent")+"&addauth=true", "application/json", function(resp){
     var data = JSON.parse(resp.responseText);
+    var tmpArray = [];
     for(s in data.statuses){
-      tweets.push(data.statuses[s])
-
-      if(tweets.length > 100){
-        tweets.splice(0,1);
-      }
-
+      tmpArray.push(data.statuses[s])
     }
+    tweets = tmpArray;
     showTweets(tweets)
 
     highlightTweet(tweets[0])
@@ -34,6 +31,8 @@ setInterval(fetchTweets, 120000);
 fetchTweets();
 
 function showTweets(tweets){
+
+  d3.select("div.tweeters").selectAll("img").remove();
 
   d3.select("div.tweeters").selectAll("img")
     .data(tweets)
