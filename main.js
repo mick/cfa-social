@@ -8,6 +8,10 @@ var fetchTweets = function(){
     for(s in data.statuses){
       tweets.push(data.statuses[s])
     }
+    for(s in data.statuses){
+      tweets = tweets.splice(tweets.length-100, 100);
+    }
+
     showTweets(tweets)
 
     highlightTweet(tweets[0])
